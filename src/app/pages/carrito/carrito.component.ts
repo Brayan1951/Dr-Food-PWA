@@ -21,7 +21,6 @@ export class CarritoComponent implements OnInit {
     }
 
     this.productos = this.carritoService.productos
-    console.log(this.productos);
     this.cremas = this.dataService.getCremas()
 
   }
