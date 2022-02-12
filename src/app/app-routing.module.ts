@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'carrito',
-    loadChildren: () => import('./pages/menu-productos/menu-productos.module').then(m => m.MenuProductosModule)
+    loadChildren: () => import('./pages/carrito/carrito.module').then(m => m.CarritoModule)
   },
   {
     path: '**',
@@ -21,7 +21,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -4,9 +4,50 @@
 html,
 body {
   background-color: #fce6be;
+  margin: 0;
+  padding: 0;
 }
 .navbar-drfood {
   background-color: #ff282f;
   color: #f8ea1e;
   //   height: 2.5rem;
+}
+.boton {
+  font-size: 20px;
+  padding: 0;
+}
+.carta {
+  //   width: 100%;
+  height: 80%;
+
+  background-color: #f5ec74;
+  margin: 2rem 1rem 2rem 1rem;
+  border: 2px rgb(250, 57, 57) solid;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: background-color 1s;
+  transition: border 0.5s;
+  cursor: pointer;
+}
+.carta:hover {
+  background-color: #ebdc15;
+  border: 5px rgb(250, 57, 57) solid;
+}
+
+.info {
+  background-color: rgba(255, 255, 255, 0.856);
+  padding: 1rem;
+  .precio {
+    align-self: center;
+    border: 2px rgb(68, 71, 68) solid;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: rgb(76, 175, 76);
+  }
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

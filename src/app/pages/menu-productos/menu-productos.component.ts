@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Productos } from '../../interfaces/interfaces';
 import { DataService } from '../../services/data.service';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-menu-productos',
@@ -48,27 +49,28 @@ export class MenuProductosComponent implements OnInit {
   // productos: Observable<Productos[]>
   productos: Productos[] = []
   tipo = 'Hamburguesa'
+  cantidad: any
 
+  constructor(private dataService: DataService, private carritoService: CarritoService) {
 
-  constructor(private dataService: DataService) {
-    // this.productos = this.dataService.getMenuProductos()
   }
 
   ngOnInit(): void {
     this.dataService.getMenuProductos().subscribe(resp => {
       this.productos = resp
     })
-    // this.productos = this.dataService.getMenuProductos()
+
+    this.cantidad = this.carritoService.productos
   }
-  // segmentChanged(event: any) {
-  //   console.log(event);
 
-  //   this.tipo = event.detail.value
-
-  // }
   onChange(e: any) {
     this.tipo = e.target.value
-    // console.log(this.tipo);
+
 
   }
+
+  agregar(producto: Productos) {
+    this.carritoService.add(producto)
+  }
+
 }

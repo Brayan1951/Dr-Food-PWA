@@ -1,1 +1,53 @@
-<p>carrito works!</p>
+<div class="navbar-drfood py-2 row">
+    <button class="btn btn-warning boton col-1 ms-3" routerLink="/menu"> <span>{{'<'}}</span>
+    </button>
+    <div class="col-8">
+        <div class="row">
+
+            <h2 class="col-5 text-end">Productos</h2>
+
+        </div>
+
+    </div>
+
+    <button class="btn btn-warning col-2 boton ms-2"
+        routerLink="/carrito">
+        Boleta</button>
+</div>
+<div class="carta" *ngFor="let producto of productos;let i=index;">
+    <div class="info">
+        <div class="titulo">
+            <h3>{{i+1}}
+                {{ producto.nombre}}
+
+
+            </h3>
+            <h4 class="precio">S./{{producto.precio}}</h4>
+        </div>
+        <hr>
+        <div class="descripcion">
+            <p>
+
+                {{(producto.descripcion)}}
+            </p>
+        </div>
+        <div>
+            <h2>Cremas
+            </h2>
+
+
+        </div>
+        <hr>
+
+        <div class="cremas row">
+            <div class="form-check col-2" *ngFor="let crema of
+                cremas|async">
+
+                <input type="checkbox" [value]="crema.nombre"
+                    (change)="changeCrema(i,$event)"
+                    size="20px" name="" id="">
+                <label for="" class="ms-2">{{crema.nombre}}</label>
+            </div>
+        </div>
+    </div>
+</div>

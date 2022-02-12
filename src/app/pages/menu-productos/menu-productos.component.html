@@ -1,18 +1,27 @@
 <div class="navbar-drfood py-2 row">
-    <button class="btn btn-warning boton col-1 ms-3" routerLink="/"><</button>
-        <div class="col-8">
-            <div class="row">
+    <button class="btn btn-warning boton col-1 ms-3" routerLink="/"> <span>{{'<'}}</span>
+    </button>
+    <div class="col-8">
+        <div class="row">
 
-                <h2 class="col-5 text-end">Productos</h2>
-                <select class="col" (change)="onChange($event)">
-                    <option *ngFor="let tipo2 of tipos">{{tipo2.nombre}}</option>
-                </select>
-            </div>
-
+            <h2 class="col-5 text-end">Productos</h2>
+            <select class="col" (change)="onChange($event)">
+                <option *ngFor="let tipo2 of tipos">{{tipo2.nombre}}</option>
+            </select>
         </div>
-        <button class="btn btn-warning boton col-2 ms-2" routerLink="/"> carrito</button>
+
     </div>
-    <p>{{tipo}}</p>
-    <div>
-        <p *ngFor="let producto of (productos)|filtro:tipo:'tipo'">{{producto.nombre}}</p>
+
+    <button class="btn btn-warning col-2 boton ms-2"
+        [disabled]="cantidad.length==0" routerLink="/carrito">
+        carrito |{{cantidad.length}}</button>
+</div>
+
+
+<div class="lista row">
+    <div class="col-4" (click)="agregar(producto)" *ngFor="let producto of
+        (productos)|filtro:tipo:'tipo'">
+        <app-producto [producto]="producto"></app-producto>
     </div>
+
+</div>
