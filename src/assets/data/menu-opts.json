@@ -1,0 +1,12 @@
+[
+    {
+        "icon": "american-football-outline",
+        "name": "Realizar Pedido",
+        "redirecTo": "/menu-productos"
+    },
+    {
+        "icon": "american-football-outline",
+        "name": "Lista de pedidos",
+        "redirecTo": "/lista-pedidos"
+    }
+]

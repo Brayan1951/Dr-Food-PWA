@@ -1,0 +1,82 @@
+[
+    {
+        "nombre": "Huevo",
+        "precio": 1
+    },
+    {
+        "nombre": "Huevo",
+        "precio": 1
+    },
+    {
+        "nombre": "Jamón",
+        "precio": 1
+    },
+    {
+        "nombre": "Queso cheddar",
+        "precio": 1
+    },
+    {
+        "nombre": "Queso edam",
+        "precio": 1
+    },
+    {
+        "nombre": "pepinillos",
+        "precio": 1
+    },
+    {
+        "nombre": "Maiz desgranado",
+        "precio": 2
+    },
+    {
+        "nombre": "Arroz blanco ",
+        "precio": 2
+    },
+    {
+        "nombre": "Plátano",
+        "precio": 2
+    },
+    {
+        "nombre": "Tocino",
+        "precio": 3
+    },
+    {
+        "nombre": "Chorizo",
+        "precio": 3
+    },
+    {
+        "nombre": "HoT Dog",
+        "precio": 3
+    },
+    {
+        "nombre": "Ala Broaster",
+        "precio": 5
+    },
+    {
+        "nombre": "1/8 Broaster",
+        "precio": 7
+    },
+    {
+        "nombre": "carne clasica",
+        "precio": 4
+    },
+    {
+        "nombre": "carne junior",
+        "precio": 3
+    },
+    {
+        "nombre": "piña",
+        "precio": 2
+    },
+    {
+        "nombre": "Papas grandes",
+        "precio": 7
+    },
+    {
+        "nombre": "Papas medianas",
+        "precio": 5
+    },
+    {
+        "nombre": "Papas pequeñas",
+        "precio": 2.5
+    }
+]

@@ -1,0 +1,18 @@
+<div class="navbar-drfood py-2 row">
+    <button class="btn btn-warning boton col-1 ms-3" routerLink="/"><</button>
+        <div class="col-8">
+            <div class="row">
+
+                <h2 class="col-5 text-end">Productos</h2>
+                <select class="col" (change)="onChange($event)">
+                    <option *ngFor="let tipo2 of tipos">{{tipo2.nombre}}</option>
+                </select>
+            </div>
+
+        </div>
+        <button class="btn btn-warning boton col-2 ms-2" routerLink="/"> carrito</button>
+    </div>
+    <p>{{tipo}}</p>
+    <div>
+        <p *ngFor="let producto of (productos)|filtro:tipo:'tipo'">{{producto.nombre}}</p>
+    </div>

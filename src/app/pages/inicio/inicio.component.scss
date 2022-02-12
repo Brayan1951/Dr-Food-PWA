@@ -1,0 +1,10 @@
+h3 {
+  cursor: pointer;
+  transition: color 1s;
+  transition: background-color 1s;
+  background-color: #e29582;
+}
+h3:hover {
+  color: #f0e117;
+  background-color: #ec4d4d;
+}

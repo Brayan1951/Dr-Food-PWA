@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "styles/main.scss";
+html,
+body {
+  background-color: #fce6be;
+}
+.navbar-drfood {
+  background-color: #ff282f;
+  color: #f8ea1e;
+  //   height: 2.5rem;
+}
