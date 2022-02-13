@@ -42,10 +42,10 @@ export class CarritoService {
       }
 
     }
+  }
 
-
-
-
+  cleancremas(i: number) {
+    this.productos[i].cremas?.splice(0, this.productos[i].cremas?.length)
   }
 
 

@@ -32,26 +32,38 @@
             </p>
         </div>
         <div>
-            <h2>Cremas
-            </h2>
             <div class="row">
 
-                <p class="col-2" *ngFor="let crema of producto.cremas">
-                    {{crema}}</p>
-            </div>
+                <h2 class="col-4">
+                    Cremas:
 
+                </h2>
+                <div class="col">
+
+                    <span class="" *ngFor="let crema of
+                        producto.cremas">
+                        {{crema}},</span>
+                </div>
+            </div>
+            <!-- <div class="row">
+
+                <p class="col-4 col-sm-3" *ngFor="let crema of producto.cremas">
+                    {{crema}}</p>
+            </div> -->
         </div>
         <hr>
 
         <div class="cremas row">
-            <div class="form-check col-2" *ngFor="let crema of
+            <div class="form-check col-3 col-sm-2" *ngFor="let crema of
                 cremas|async">
 
                 <input type="checkbox" [value]="crema.nombre"
                     (change)="changeCrema(i,$event)"
                     size="20px" name="" id="">
-                <label for="" class="ms-2">{{crema.nombre}}</label>
+                <span for="" class="ms-2">{{crema.nombre}}</span>
             </div>
+            <button class="ms-3 col-4 btn btn-primary"
+                (click)="cleanCremas(i)">Limpiar</button>
         </div>
     </div>
 </div>

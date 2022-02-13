@@ -30,5 +30,8 @@ export class CarritoComponent implements OnInit {
     this.carritoService.addCremas(i, event.target.value)
 
   }
+  cleanCremas(i: number) {
+    this.carritoService.cleancremas(i)
+  }
 
 }

@@ -12,14 +12,16 @@
 
     </div>
 
-    <button class="btn btn-warning col-2 boton ms-2"
+    <button class="btn btn-warning col-1 col-sm-2 boton ms-2"
         [disabled]="cantidad.length==0" routerLink="/carrito">
         carrito |{{cantidad.length}}</button>
 </div>
 
 
 <div class="lista row">
-    <div class="col-4" (click)="agregar(producto)" *ngFor="let producto of
+    <div class="col-12 col-sm-4" (click)="agregar(producto)" *ngFor="let
+        producto
+        of
         (productos)|filtro:tipo:'tipo'">
         <app-producto [producto]="producto"></app-producto>
     </div>
