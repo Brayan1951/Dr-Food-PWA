@@ -1,3 +1,4 @@
+<!-- Nav bar -->
 <div class="navbar-drfood py-2 row">
     <button class="btn btn-warning boton col-1 ms-3" routerLink="/menu"> <span>{{'<'}}</span>
     </button>
@@ -14,10 +15,40 @@
         routerLink="/carrito">
         Boleta</button>
 </div>
+<!-- Fin del navbar -->
+<!--  manejo de dinero-->
+<div class="row mt-2 mx-4">
+    <h1>Total:{{monto()}}</h1>
+    <div class="col-6">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">S./</span>
+            <input type="number" class="form-control" aria-label="Amount (to the
+                nearest
+                dollar)" [(ngModel)]="dinero">
+        </div>
+    </div>
+    <div class="col">
+        <div class="input-group mb-3" *ngIf="dinero>=monto()">
+            <span class="input-group-text">Vuelto: S./</span>
+            <input disabled type="text" class="form-control"
+                [value]="(dinero-monto())">
+        </div>
+        <div class="input-group mb-3" *ngIf="dinero<monto()">
+            <span class="input-group-text">Falta: S./</span>
+            <input type="text" class="form-control" disabled
+                [value]="(monto()-dinero)">
+        </div>
+    </div>
+</div>
+<!-- fin de manejo de dinero -->
+
+
+<!-- Productos -->
 <div class="carta" *ngFor="let producto of productos;let i=index;">
     <div class="info">
         <div class="titulo">
-            <h3>{{i+1}}
+            <h3>{{i+1}}-
                 {{ producto.nombre}}
 
 
@@ -31,7 +62,8 @@
                 {{(producto.descripcion)}}
             </p>
         </div>
-        <div>
+        <!-- Cremas -->
+        <!-- <div>
             <div class="row">
 
                 <h2 class="col-4">
@@ -45,25 +77,89 @@
                         {{crema}},</span>
                 </div>
             </div>
-            <!-- <div class="row">
 
-                <p class="col-4 col-sm-3" *ngFor="let crema of producto.cremas">
-                    {{crema}}</p>
-            </div> -->
-        </div>
-        <hr>
+            <hr>
 
-        <div class="cremas row">
-            <div class="form-check col-3 col-sm-2" *ngFor="let crema of
-                cremas|async">
 
-                <input type="checkbox" [value]="crema.nombre"
-                    (change)="changeCrema(i,$event)"
-                    size="20px" name="" id="">
-                <span for="" class="ms-2">{{crema.nombre}}</span>
+
+            <div class="cremas row">
+                <div class="form-check col-3 col-sm-2" *ngFor="let crema of
+                    cremas|async">
+
+                    <input type="checkbox" [value]="crema.nombre"
+                        (change)="changeCrema(i,$event)"
+                        size="20px" name="" id="">
+                    <span for="" class="ms-2">{{crema.nombre}}</span>
+                </div>
+                <button class="ms-3 col-4 btn btn-primary"
+                    (click)="cleanCremas(i)">Limpiar</button>
             </div>
-            <button class="ms-3 col-4 btn btn-primary"
-                (click)="cleanCremas(i)">Limpiar</button>
-        </div>
+        </div> -->
+        <!-- fin cremas -->
+        <!-- inicio cremas -->
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+
+                    <mat-panel-title><h2>Cremas:</h2> </mat-panel-title>
+                    <mat-panel-description> <span class="" *ngFor="let crema of
+                            producto.cremas">
+                            {{crema}},</span></mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- seleccion de cremas -->
+                <div class="cremas row">
+                    <div class="form-check col-4 col-sm-3 mt-2" *ngFor="let
+                        crema of
+                        cremas|async">
+
+                        <input type="checkbox" [value]="crema.nombre"
+                            (change)="changeCrema(i,$event)"
+                            size="20px" name="" id="">
+                        <span for="" class="ms-2">{{crema.nombre}}</span>
+                    </div>
+                    <button class="ms-3 mt-2 col-4 btn btn-primary"
+                        (click)="cleanCremas(i)">Limpiar</button>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <!-- fin de cremas -->
+        <!-- Inicio de adicionales -->
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+
+                        <h2>Adicionales:</h2>
+                    </mat-panel-title>
+                    <mat-panel-description> <span class="" *ngFor="let adicional
+                            of
+                            producto.agregados">
+                            {{adicional.nombre}},</span></mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="adicionales row">
+                    <div class="form-check col-4 col-sm-3 mt-2" *ngFor="let
+                        agregado of
+                        agregados|async">
+
+                        <input type="checkbox" [value]="agregado"
+                            (change)="changeAdi(i,agregado)"
+                            size="20px" name="" id="">
+                        <span for="" class="ms-2">{{agregado.nombre}}</span>
+                    </div>
+                    <!-- <button class="ms-3 mt-2 col-4 btn btn-primary"
+                        (click)="cleanadi(i)">Limpiar</button> -->
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+
     </div>
+
+    <div class="boton-delete">
+        <button (click)="eliminar(i)" class="btn btn-danger">
+
+            eliminar
+        </button>
+    </div>
+
 </div>
+<!-- Fin de productos -->

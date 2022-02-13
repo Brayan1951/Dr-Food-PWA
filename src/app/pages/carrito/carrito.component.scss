@@ -1,3 +1,7 @@
 input[type="checkbox"] {
   transform: scale(2);
 }
+.boton-delete {
+  display: flex;
+  flex-direction: row-reverse;
+}

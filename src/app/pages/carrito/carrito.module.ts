@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { CarritoRoutingModule } from './carrito-routing.module';
 import { CarritoComponent } from './carrito.component';
+// Angular material
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +14,9 @@ import { CarritoComponent } from './carrito.component';
   ],
   imports: [
     CommonModule,
-    CarritoRoutingModule
+    CarritoRoutingModule,
+    MatExpansionModule,
+    FormsModule
   ]
 })
 export class CarritoModule { }
